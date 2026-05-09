@@ -5,7 +5,12 @@ from fastflyer import FlyerAPI
 
 root_path = path.dirname(path.abspath(__file__))
 app_path = f"{root_path}/app"
-app = FlyerAPI(app_path=app_path)
+app = FlyerAPI(
+    app_path=app_path,
+    allow_origins=["*"],  # 允许所有跨域
+    allow_methods=["*"],  # 允许所有方法
+    allow_headers=["*"]   # 允许所有头部
+)
 
 
 def main():
